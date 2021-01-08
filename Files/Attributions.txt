@@ -1,0 +1,9 @@
+<h4>Contributors:</h4>
+<ul>
+	<li>Dominick Johnson (Author)</li>
+</ul>
+
+<h4>Files Used:</h4>
+<ul>
+	<li>English Dictionary (Dictionary.txt) derived from Google ngrams, licensed Creative Commons Attribution 3.0 Unported</li>
+</ul>

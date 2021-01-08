@@ -1,0 +1,82 @@
+﻿
+@Ceasar Cipher:
+
+The Shift Cipher, also known as the Ceasar Cipher due to the fact that it was often used by Julius Ceasar, is a simple encryption technique in which every letter of the alphabet is 'Shifted' so many places over. For example, the letter 'A' shifted three places becomes 'D', while 'X' shifted three places becomes 'A'. The word “Hello” with shift 4 would become “Lipps”. This can be used to encrypt messages so that the meaning is not easily visible to an outside observer, however, it is not a very secure cipher. In fact, it is the weakest cipher available in this program. An average home computer using a brute force attack can break a Caesar Cipher message in a fraction of a second. Even done manually, a professional code breaker can crack a Caesar cipher in seconds.
+
+
+@Enigma Machine:
+The Enigma Machine was invented by the Germans in World War 2 for sending military messages. It consisted of a keyboard which send an electrical signal through a series of rotors which would each perform a simple substitution. When it reached the end, it would hit a reflector wheel which would send it back through the rotors, where it would light up a bulb on a board, indicating to the second operator which cipher letter to record. After each keypess, the first rotor would rotate one place. After the first rotor completed a full 360º rotation, the second rotor wound then rotate. Although it is not implemented in this program, many Enigma Machines also featured a plugboard witch further complicated the process, adding another layer of security. 
+
+
+@Hide:
+The Hide is not actually a real cipher, but it does do a fairly good job at scaring away any potential attackers. It works simply by hiding the message in the middle of a very large amount of “Garbage Data”, or, in other words, a huge mess of unintelligible and completely meaningless symbols. To solve it, the garbage data is stripped away by deleting the most frequently used characters in order to reveal the message. However, be warned that both enciphering and deciphering with this method takes a large amount of computer power owing simply to the massive amount of garbage encircling the message. The Hide can produce literally thousands of garbage symbols for each letter of the message. However, this disadvantage is also it's greatest advantage. It takes a LOT of work! More than enough work to scare of almost anyone who would want to read your message!
+
+
+@Null Cipher:
+The null cipher quite simply takes every letter in a message and replaces it with a word beginning with that letter. Words are sperated by punctuation marks. It is not so much an actual cipher as it is a fun puzzle for children but, if done manually, it can be done in such a way that others may not even realize that it actually contains any hidden messages. For example, "Meet at eight" could be disguised as “Mrs. Emery eats tofu!? And tuna!? Ew, I'm gonna hurl tout-de-suite!” No one would even know it was a secret message! One problem wih this cipher, however, is that you loose all punctuation.
+
+
+@One Time Pad:
+The One-Time Pad cipher was named so because, for security reasons, a key may only be used one time. This is the cipher’s greatest downfall. However, if used correctly, the One-Time Pad cipher is impossible to decode without knowing the key. It was historically used by many military organizations throughout history, including the Soviet Union's infamous KGB.
+Just to show how secure this cipher is, take a message as simple as a single word: "Hello". There are 11,881,376 different keys that could be used with this word, meaning that a brute force attack by a determined code-breaker would have to try each of those nearly twelve million variations, just for a word as simple as "Hello". The number of possible variation grows exponentially with each letter in the message, so an even longer message would have even more variations. A message with only 100 letters (Just a couple of sentences) would have over 3.143x10^141 variations. Just to give you an idea of how huge of a number that is, it's more than the number of electrons scientists estimate are in the known universe!
+But what makes the cipher 'impossible to break' is that multiple plaintexts could be derived from the same cipher text. For example, “P KLRY HSU” could be decoded to “I like pie”, “A mean dog”, “I feel ill”, “A gray van”, or any other sentence with a one-letter word, a four-letter word, then a three-letter word, depending on the key you use. And all those variations are just as likely.
+The One-Time Pad cipher works by assigning each letter of the alphabet a numeric value from one to twenty-six. Then, using modular addition (With a modulus of 26), each letter of the message is added to the corresponding letter in the key.
+
+
+@Playfair:
+<p>
+The Playfair cipher, named after Scottish scientist and politician Lord Lyon Playfair, who advocated it's use, was invented by English scientist Charles Wheatstone. It introduced a new type of cipher know as digraph substitution. Rather than encrypting letters one at a time, it took letter two at a time and encrypted them together. The playfair cipher consisted of a 5x5 grid of letters. As there would only be 25 squares in the grid, one letter, usually 'q' or 'x'. If two of the same letter are side-by-side, another letter, usually an uncommon letter so it will be easily recognized as an insertion, will be inserted between them.
+</p>
+
+<p>
+To encode, two letters would be taken at a time from the message and located on the grid. Depending on the letters' position relative to one another, one of three rules would be used to encrypt them:
+</p>
+<ul>
+	<li>
+	If the letter are both in the same row, replace each with the letter directly to the right of it, wrapping if necessary.
+	</li>
+
+	<li>
+	If the letters are in the same column, replace each letter with the letter directly underneath it, wrapping if necessary.
+	</li>
+
+	<li>
+	Otherwise, replace each letter with the letter in its same row on the grid, but in the same column as the other letter.
+	</li>
+</ul>
+
+<p>
+Decoding is similar, except you go to the left instead of the right in the first rule, and up instead of down in the second.
+</p>
+
+
+@Simple Substitution:
+The Substitution Cipher is a fairly simple cipher in which every letter of the alphabet is substituted by a different letter. For example, 'Q' might replace 'A' while 'G' replaces 'B', and so on.
+The substitution
+
+
+@Simple Transposition:
+The term “Transposition Cipher” refers to any cipher that changes the order of characters in the message rather than replacing them. The transposition cipher implemented in this program woks by creating a grid. The number of columns in this grid will be your key.
+
+
+@Vigenère Cipher:
+---
+
+@Hill Cipher:
+<p>
+The hill cipher is a form of block cipher that uses matrix multiplication to encode the message. Each letter is represented by a number (A=0, B=1... Z=25) and taken three at a time in a column vector, then multiplied (mod 26) by the key (a 3x3 matrix). Decryption is the same, except you multiply by the inverse mod 26 of the key matrix.
+For example, to encode the word "and" you would do the following: (Note: the first matrix is the key matrix, the second represents the plaintext letters, and the result represents the ciphertext letters.)
+</p>
+<pre>
+┌          ┐   ┌  ┐   ┌ ┐
+|6   24   1|   |0 |   |3|
+|13  16  10| x |13| = |4|
+|20  17  15|   |3 |   |6|
+└          ┘   └  ┘   └ ┘
+</pre>
+<p>
+Encrypting it to "deg". To reverse the process, you would find the inverse matrix mod 26 of the key and substitute it for the key when multiplying.
+</p>
+
+
+@

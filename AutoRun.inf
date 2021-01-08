@@ -1,0 +1,13 @@
+[autorun]
+open=DiskInstall.bat
+icon=Files\Icon.ico
+label=Cipher, By Dominick Johnson
+
+shell\setup=Install Cipher
+shell\setup\command=DiskInstall.bat
+
+shell\rund=Run from disk (Depencies must still be installed)
+shell\rund\command=python Cipher.pyw
+
+shell\run=Run (Must be installed!)
+shell\run\command=python "c:\Unprotected Programs\dmjohnson\Cipher\Cipher.pyw"
