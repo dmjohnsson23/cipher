@@ -1,10 +1,10 @@
 """\
-####################################################################
-#              Dominick Johnson's Encription program               #
-#              Using elements from previous programs,              #
-#          such as Ceasar Cipher and One-Time Pad Cipher           #
-# Plus addtional elements including new GUI and additional ciphers #
-####################################################################
+#####################################################################
+#              Dominick Johnson's Encryption program                #
+#              Using elements from previous programs,               #
+#          such as Caesar Cipher and One-Time Pad Cipher            #
+# Plus additional elements including new GUI and additional ciphers #
+#####################################################################
 
 ---Main Module---
 
@@ -23,28 +23,28 @@ Functions & Classes:
         > ciphers
             > A dictionary containing cipher names for keys and module
               references for values
-            > Used to simplify code determining which cipher moduel
+            > Used to simplify code determining which cipher module
               to use when user encode/Decodes message
         > All other vars refer to Widgets
 
     > Functions:
         > center()
-            > Centers window on screen, taken from ZetCode PySide tutorial
+            > Centers window on screen, taken from ZetCode PySide2 tutorial
               No return type
         > closeEvent()
             > Upon close, propts user if they really want to exit,
-              adapted from ZetCode PySide Tutorial
+              adapted from ZetCode PySide2 Tutorial
               No return type
         > translate(cipher, keyF, mode)
-            > Calls the encypt() function from individuel cipher moduels,
-              Displays the resulting text depending on user preferance
+            > Calls the encrypt() function from individual cipher modules,
+              Displays the resulting text depending on user preference
               No return type
             > cipher: A sting containing cipher name
             > keyF: A function to call that will generate the key expected by cipher
             > mode: Either "Encode" or "Decode"
         > dataOpen(default="")
             > Asks user for a text file. If user doesn't cancel and no error
-              occur, returns raw data from file, otherwize returns default
+              occur, returns raw data from file, otherwise returns default
         > dataSave(data, filename="")
             > Saves data to filename. If filename=="", prompts uer for filename,
               If user cancels or errors occur, does nothing
@@ -55,7 +55,7 @@ Functions & Classes:
         > loadKey(cipher)
             > Loads key information from user-specified file,
               checks if key is compatible with cipher,
-              if so, returns key, otherwize, returns nothing
+              if so, returns key, otherwise, returns nothing
         > saveKey(cipher, key)
             > Saves key to user-specified file.
               No return type
@@ -75,22 +75,16 @@ import pickle
 from .Utilities import *
 
 try:
-    #Make Sure Qt and PySide Exist on computer
-    from PySide.QtCore import *
-    from PySide.QtGui import *
+    #Make Sure Qt and PySide2 Exist on computer
+    from PySide2.QtCore import *
+    from PySide2.QtGui import *
+    from PySide2.QtWidgets import *
 except ImportError:
-##    #If not, show a message informing the user what to do
-##    import tkinter as tk
-##    from tkinter.messagebox import showerror
-##    root=tk.Tk()
-##    root.withdraw()
-##    showerror(title="Error",
-##              message="This program requires PySide and Qt to run. "
-##              "Please install them, then try again.")
-    os.startfile(os.path.join("Files", "Missing_Dependancies.html"))
+    import webbrowser
+    webbrowser.open(os.path.join("Files", "Missing_Dependancies.html"))
     sys.exit()
 
-#Now we know we have PySide, We need to make a QApplication before
+#Now we know we have PySide2, We need to make a QApplication before
 #we do anything else (Otherwise we get some errors when the
 #Encryption packages begins defining it's Interface objects.
 app=QApplication(sys.argv)
@@ -251,7 +245,7 @@ Displays the main window. This class is basically the center or the whole progra
         
         
         #Note: There is a better way to do theme changes, as it is done in
-        #C:\Python32\Lib\site-packages\PySide\examples\widgets\icons\icons.py.
+        #C:\Python32\Lib\site-packages\PySide2\examples\widgets\icons\icons.py.
         #Try that way.
         themeActions=[]
         for theme in QStyleFactory.keys():
@@ -389,7 +383,7 @@ Displays the main window. This class is basically the center or the whole progra
     def center(self):
         """\
 Centers the window on the screen.
-Taken from ZetCode PySide tutorial.\
+Taken from ZetCode PySide2 tutorial.\
 """
         qr = self.frameGeometry()
         cp = QDesktopWidget().availableGeometry().center()
@@ -400,7 +394,7 @@ Taken from ZetCode PySide tutorial.\
     def closeEvent(self, event):
         """\
 Provides that lovely "Are you sure you want to quit?" message.
-Adapted from ZetCode PySide tutorial\
+Adapted from ZetCode PySide2 tutorial\
 """
         if Options.MODE=="DEBUG":
             event.accept()

@@ -16,7 +16,7 @@ from ..Utilities import getkey, initialize
 from .Substitution import checkKey, randomKey, keyFromWord
 from ..LetterMath import letterAdd, modAdd, numToChar, charToNum
 from ..GuiElements import ListSelector, LineInput, ICONS
-from PySide.QtCore import Qt
+from PySide2.QtCore import Qt
 
 NAME="Enigma Machine"
 
@@ -198,7 +198,8 @@ def decode(message, key=None):
     
 
 
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 @initialize
 class Interface(QWidget):
     SAVE_LOAD=True

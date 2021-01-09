@@ -1,4 +1,4 @@
-from PySide.QtCore import *
+from PySide2.QtCore import *
 from ..Utilities import ENCODE, DECODE, HACK
 
 

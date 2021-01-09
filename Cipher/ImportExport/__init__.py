@@ -7,7 +7,7 @@ from . import DJCK #Custom File Type
 from . import Misc
 
 from ..Utilities import USER_HOME
-from PySide.QtGui import *
+from PySide2.QtGui import *
 
 cipherText = {}
 cipherKeys = {}

@@ -16,8 +16,9 @@ import random
 from string import ascii_lowercase as alphabet
 from ..Utilities import ENCODE, DECODE, initialize, chunker
 from ..GuiElements import EntryGrid, LetterSpinner
-from PySide.QtGui import *
-from PySide.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtWidgets import *
 from .Substitution import keyFromWord
 
 NAME="Playfair"
@@ -182,7 +183,7 @@ class Interface(QWidget):
         grid.setSpacing(10)
         
 ##        self.table=QTableWidget(5, 5)
-##        delegate=QItemDelegate() #TODO: fix bug "RuntimeError: Internal C++ object (PySide.QtGui.QItemDelegate) already deleted."
+##        delegate=QItemDelegate() #TODO: fix bug "RuntimeError: Internal C++ object (PySide2.QtGui.QItemDelegate) already deleted."
 ##        delegate.createEditor(QSpinBox())
 ##        self.table.setItemDelegate(delegate)  
         

@@ -9,7 +9,8 @@
 import random
 from ..Utilities import initialize
 from .. import Words
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
 NAME="Null Cipher"
 

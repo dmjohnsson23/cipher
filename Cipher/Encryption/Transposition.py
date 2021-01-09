@@ -1,6 +1,8 @@
 from ..Utilities import chunker, initialize
 from itertools import zip_longest
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+import random
 
 NAME="Simple Transposition"
 
@@ -19,7 +21,7 @@ def decode(message, key=None):
     n=len(message)//key
     return "".join("".join(x) for x in zip_longest(*chunker(message, n), fillvalue="")).rstrip()
 
-from PySide.QtGui import *
+from PySide2.QtGui import *
 @initialize
 class Interface(QWidget):
     SAVE_LOAD=False
@@ -37,9 +39,7 @@ class Interface(QWidget):
         grid.addWidget(self.key, 0, 0)
 
         keyRand=QPushButton("Randomize")
-        keyRand.clicked.connect(lambda
-                                      key=self.key:
-                                      key.setValue(random.randint(1, 100)))
+        keyRand.clicked.connect(lambda:self.setKey(random.randint(1, 100)))
         keyRand.setToolTip("Generate a random shift value")
         grid.addWidget(keyRand, 0, 1)
 

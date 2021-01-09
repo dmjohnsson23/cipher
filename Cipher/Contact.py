@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from .Utilities import DIRECTORY
 from .GuiElements import ICONS
 import os
-from PySide.QtGui import *
+from PySide2.QtGui import *
 
 TO_ADDRESS = "dmjohn235@gmail.com"
 LOG_PATH=os.path.join(DIRECTORY, "log.txt")

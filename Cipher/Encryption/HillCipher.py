@@ -2,8 +2,9 @@ import random
 from ..Utilities import initialize
 from ..LetterMath import numToChar, charToNum, modMatInv
 from ..GuiElements import EntryGrid
-from PySide.QtGui import *
-from PySide.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtCore import *
+from PySide2.QtWidgets import *
 
 NAME="Hill Cipher"
 

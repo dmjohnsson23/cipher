@@ -8,7 +8,8 @@
 import sys
 print(sys.argv)
 import random
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 from ..Utilities import LETTER_GOODNESS, getkey, initialize, removeNonAlpha, removeDuplicates
 from ..GuiElements import LineInput
 from ..LetterMath import charToNum, numToChar
@@ -156,16 +157,12 @@ class Interface(QWidget):
         grid.addWidget(self.entry, 0, 0, 1, 2)
         
         keyRand=QPushButton("Randomize")
-        keyRand.clicked.connect(lambda
-                                      key=self.entry:
-                                      key.setText(randomKey()))
+        keyRand.clicked.connect(lambda: self.setKey(randomKey()))
         keyRand.setToolTip("Generate a pseudo-random key")
         grid.addWidget(keyRand, 0, 2)
         
         keyword=QPushButton("From Keyword")
-        keyword.clicked.connect(lambda
-                                      key=self.entry:
-                                      key.setText(keyFromWord() or key.text()))
+        keyword.clicked.connect(lambda: self.setKey(keyFromWord() or self.key.text()))
         keyword.setToolTip("Generate a key from a word or phrase")
         grid.addWidget(keyword, 0, 3)
         

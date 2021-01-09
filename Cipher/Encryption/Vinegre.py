@@ -18,7 +18,8 @@ from ..Utilities import removeNonAlpha, initialize, ENCODE, DECODE
 from .. import Words
 from ..GuiElements import LineInput
 from itertools import cycle
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 
 
 
@@ -99,8 +100,7 @@ class Interface(QWidget):
         grid.addWidget(self.entry, 0, 0, 1, 2)
         
         keyRand=QPushButton("Randomize")
-        keyRand.clicked.connect(lambda key=self.entry:
-                                    key.setText(Words.getRandomWord()))
+        keyRand.clicked.connect(lambda:self.setKey(Words.getRandomWord()))
         keyRand.setToolTip("Generate a pseudo-random key")
         grid.addWidget(keyRand, 0, 2)
         

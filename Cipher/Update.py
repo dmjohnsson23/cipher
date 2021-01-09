@@ -1,6 +1,6 @@
 from .Utilities import VERSION_NUMBER
 import webbrowser
-from PySide.QtGui import *
+from PySide2.QtGui import *
 
 UPDATE_SITE="https://drive.google.com/folderview?id=0Bybx5H7UQYtURFF3UE5GVi1kM3c&usp=sharing"
 

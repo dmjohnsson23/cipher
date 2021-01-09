@@ -82,7 +82,8 @@ def decode(message, key=None):
     return out
 
 
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 @initialize
 class Interface(QWidget):
     SAVE_LOAD=True

@@ -62,7 +62,8 @@ def hack(message):
     Interface.setKey(bestKey)
     return decode(message, bestKey)
 
-from PySide.QtGui import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
 @initialize
 class Interface(QWidget):
     SAVE_LOAD=False
@@ -80,9 +81,7 @@ class Interface(QWidget):
         grid.addWidget(self.key, 0, 0)
 
         keyRand=QPushButton("Randomize")
-        keyRand.clicked.connect(lambda
-                                      key=self.key:
-                                      key.setValue(random.randint(1, 25)))
+        keyRand.clicked.connect(lambda: self.setKey(random.randint(1, 25)))
         keyRand.setToolTip("Generate a random shift value")
         grid.addWidget(keyRand, 0, 1)
 
